@@ -1,0 +1,70 @@
+{
+  "name": "@abcnews/base-36-text",
+  "version": "1.0.0-pre",
+  "description": "Tools for encoding / decoding text to / from base36 strings",
+  "license": "MIT",
+  "author": "Australian Broadcasting Corporation",
+  "contributors": [
+    "Colin Gourlay <Gourlay.Colin@abc.net.au>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abcnews/base-36-text.git"
+  },
+  "bugs": {
+    "url": "https://github.com/abcnews/base-36-text/issues"
+  },
+  "bin": {
+    "b36t": "bin/index.js"
+  },
+  "main": "dist/index.js",
+  "module": "dist/base-36-text.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "lint": "tsdx lint src",
+    "example": "npm run build && rollup -c",
+    "prepublishOnly": "npm run build",
+    "release": "np",
+    "test": "tsdx test"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint src"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "browserslist": "> 0.25%, not dead",
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@types/jest": "^26.0.15",
+    "husky": "^4.3.0",
+    "install": "^0.13.0",
+    "np": "^7.0.0",
+    "npm": "^7.2.0",
+    "rollup": "^2.33.2",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-serve": "^1.1.0",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.0.3",
+    "typescript": "^4.0.5"
+  },
+  "dependencies": {
+    "@types/fast-text-encoding": "^1.0.1",
+    "base-x": "^3.0.8",
+    "buffer": "^6.0.2",
+    "core-js": "^3.7.0",
+    "fast-text-encoding": "^1.0.3",
+    "sade": "^1.7.4"
+  }
+}
