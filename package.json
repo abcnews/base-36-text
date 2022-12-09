@@ -29,12 +29,22 @@
     "build": "tsup src/index.ts --dts --sourcemap --format esm,cjs",
     "test": "jest",
     "lint": "eslint src",
-    "size": "size-limit",
+    "size": "npm run build && size-limit",
     "release": "np",
     "prepare": "husky install",
     "prepublishOnly": "npm run build",
     "example": "npm run build && rollup -c"
   },
+  "size-limit": [
+    {
+      "path": "dist/index.mjs",
+      "limit": "1.5 kB"
+    },
+    {
+      "path": "dist/index.js",
+      "limit": "1.5 kB"
+    }
+  ],
   "publishConfig": {
     "access": "public"
   },
