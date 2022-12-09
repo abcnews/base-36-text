@@ -1,5 +1,5 @@
-import 'core-js';
-import { encode, decode } from '../dist/base-36-text.esm.js';
+// import 'core-js';
+import { encode, decode } from '../dist/index.mjs';
 
 window.b36t = { encode, decode };
 
